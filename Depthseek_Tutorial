@@ -8,6 +8,6 @@ sort -S 50% --parallel 16 -k1,1 /path/validpairs > /output_path/sorted.validpair
 bash 0_2_Fifo_Downsample_Dedup.sh -i /output_path/sorted.validpairs -o /data_for_predict/data -t ./tmp -p 2 -s 4G -f 20
 or python 0_2_Fifo_Downsample_Dedup_python.py -i /output_path/sorted.validpairs -o /data_for_predict/data -t ./tmp -p 2 -s 4G -f 20
 
-python 0_3_x_Predict*.py -i /data_for_predict/data -o /output/svg_log -n depth_value
+python 0_3_x_Predict*.py -i /data_for_predict/data -o /output/svg_log -n depth_value.(!! 0_3_4 has not -n arg)
 
 You could get validPair counts with 0_3_3, and then, the Gbase could be calculated with your in situ Hi-C data's mapping value(the Formula is in the Method of the paper).
